@@ -1,5 +1,5 @@
 from django.urls import path
-from users import urls as users_app_urls
+
 
 from .views import login_view, RegisterView, logout_view, ProfileView
 
