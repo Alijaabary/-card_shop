@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     'users',
     'proudact',
+    'django_filters',
     
     'localflavor'
 ]
