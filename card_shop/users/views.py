@@ -8,7 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.views import View
 
 #from main.models import Listing, LikedListing
-from .forms import UserForm, ProfileForm, LocationForm
+from .forms import LocationForm,UserForm
+
 
 
 def login_view(request):

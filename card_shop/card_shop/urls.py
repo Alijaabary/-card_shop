@@ -18,11 +18,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
-from users import urls as users_app_urls
-
+from users import urls
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(users_app_urls)),]
+    path('', include(urls)),]
 from main import urls as main_app_urls
 
 urlpatterns = [
