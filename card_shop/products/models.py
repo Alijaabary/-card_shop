@@ -77,7 +77,7 @@ class Product(models.Model):
 def handle_product_attachment_upload(instance, filename):
     return f"products/{instance.product.handle}/attachments/{filename}"
 
-class prouductcardshop(models.Model):
+class Prouductcardshop(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     name = models.CharField(max_length=120, null=True, blank=True)
