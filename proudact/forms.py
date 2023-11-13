@@ -27,7 +27,7 @@ class ProductUpdateForm(forms.ModelForm):
 
 
 
-class ProductAttachmentForm(forms.ModelForm):
+class ProductCardShopForm(forms.ModelForm):
     class Meta:
         model = prouductcardshop
         fields = ["file", 'name', 'is_free', 'active']
@@ -39,7 +39,7 @@ class ProductAttachmentForm(forms.ModelForm):
 
 ProductCardShoptModelFormSet = modelformset_factory(
     prouductcardshop,
-    form=ProductAttachmentForm,
+    form=ProductCardShopForm,
     fields = ['file', 'name','is_free', 'active'],
     extra=0,
     can_delete=True
@@ -48,7 +48,7 @@ ProductCardShoptModelFormSet = modelformset_factory(
 ProductCardShoptModelFormSet = inlineformset_factory(
     Product,
     prouductcardshop,
-    form = ProductAttachmentForm,
+    form = ProductCardShopForm,
     formset = ProductCardShoptModelFormSet,
     fields = ['file', 'name','is_free', 'active'],
     extra=0,

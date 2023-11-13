@@ -1,14 +1,12 @@
 from django.urls import path
+
 from . import views
 
-
+app_name='products'
 urlpatterns = [
-    path('products/', views.get_all_products,name='products'),
-    path('products/<str:pk>/', views.get_by_id_product,name='get_by_id_product'),
-    path('products/new', views.new_product,name='new_products'),
-    path('products/update/<str:pk>/', views.update_product,name='update_product'),
-    path('products/delete/<str:pk>/', views.delete_product,name='delete_product'),
-
-    path('<str:pk>/reviews', views.create_review,name='create_review'),
-    path('<str:pk>/reviews/delete', views.delete_review,name='delete_review'),
+    path('', views.product_list_view, name='list'),
+    path('create/', views.product_create_view, name='create'),
+    path('<slug:handle>/', views.product_detail_view, name='detail'),
+    path('<slug:handle>/manage/', views.product_manage_detail_view, name='manage'),
+    path('<slug:handle>/download/<int:pk>/', views.product_cardshop_download_view, name='download'),
 ]
