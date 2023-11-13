@@ -3,10 +3,14 @@ import stripe
 
 
 from django.db import models
-from django.core.files.storage import FileSystemStorage
+
 from django.conf import settings
 from django.utils import timezone
 from django.urls import reverse
+
+
+
+
 
 
 
@@ -73,7 +77,7 @@ class Product(models.Model):
 def handle_product_attachment_upload(instance, filename):
     return f"products/{instance.product.handle}/attachments/{filename}"
 
-class ProductAttachment(models.Model):
+class prouductcardshop(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
     name = models.CharField(max_length=120, null=True, blank=True)
